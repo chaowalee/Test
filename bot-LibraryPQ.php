@@ -43,8 +43,8 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
 			}
 			if($first_char == "@")
 			{
-				$KM_id = substr($txtin,1,2);///ได้รหัสการไฟฟ้า 
-				$sql_area = "SELECT * FROM librarypq WHERE index = '".$KM_id."'";
+				$km_id = substr($txtin,1,3);///ได้รหัสการไฟฟ้า 
+				$sql_area = "SELECT * FROM librarypq WHERE index = '".$km_id."'";
 				$query_area = mysqli_query($conn,$sql_area);
 				$num_row = mysqli_num_rows($query_area);// นับจำนวนที่หาเจอ
 				$txtsend = "ค้นพบ ".$num_row." รายการ";
