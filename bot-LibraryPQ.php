@@ -44,14 +44,14 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
 			if($first_char == "@")
 			{
 				$KM_id = substr($txtin,1,2);///ได้รหัสการไฟฟ้า 
-				$sql_area = "SELECT * FROM Library PQ WHERE Index = '".$KM_id."'";
+				$sql_area = "SELECT * FROM librarypq WHERE index = '".$KM_id."'";
 				$query_area = mysqli_query($conn,$sql_area);
 				$num_row = mysqli_num_rows($query_area);// นับจำนวนที่หาเจอ
 				$txtsend = "ค้นพบ ".$num_row." รายการ";
 				$a=1;
 				while($obj = mysqli_fetch_array($query_area))
 				{
-					$txtsend = $txtsend ."\n\n".$a.".".$obj["Type"]."\n".$obj["Link Google Drive"];
+					$txtsend = $txtsend ."\n\n".$a.".".$obj["type"]."\n".$obj["link"];
 					$a = $a+1;
 				}
 				reply_msg($txtsend,$replyToken);//เรียกใช้ function
